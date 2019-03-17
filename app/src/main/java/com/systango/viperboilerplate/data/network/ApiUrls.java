@@ -12,4 +12,5 @@ import static com.systango.viperboilerplate.BuildConfig.SERVER_BASE_URL;
 public interface ApiUrls {
     //Server APIs
     String GET_POPULAR_MOVIES = SERVER_BASE_URL + "movie/popular";
+    String GET_MOVIE_DETAILS = SERVER_BASE_URL + "movie/{id}?append_to_response=videos,reviews";
 }

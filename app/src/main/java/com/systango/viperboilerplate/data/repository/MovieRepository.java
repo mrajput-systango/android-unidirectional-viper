@@ -5,6 +5,7 @@ import com.systango.viperboilerplate.data.datastore.RemoteMovieDataStore;
 import com.systango.viperboilerplate.domain.entity.MovieEntity;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.inject.Inject;
 
@@ -27,5 +28,9 @@ public class MovieRepository {
 
     public Observable<List<MovieEntity>> getPopularMovies() {
         return remoteMovieDataStore.getPopularMovies();
+    }
+
+    public Observable<Optional<MovieEntity>> getMovieDetails(int movieId) {
+        return remoteMovieDataStore.getMovieById(movieId);
     }
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">VIPER Boilerplate</string>
     <string name="loading_movies">Loading Movies</string>
+    <string name="loading_details">Loading details...</string>
 </resources>

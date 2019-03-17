@@ -2,7 +2,7 @@ package com.systango.viperboilerplate.domain.interactor;
 
 import com.systango.viperboilerplate.data.repository.MovieRepository;
 import com.systango.viperboilerplate.domain.entity.MovieEntity;
-import com.systango.viperboilerplate.presentation.presenter.MoviesPresenter;
+import com.systango.viperboilerplate.presentation.presenter.base.MoviesPresenter;
 
 import java.util.List;
 
@@ -23,6 +23,6 @@ public class GetPopularMoviesInteractor {
 
     public void fetchPopularMovies() {
         Observable<List<MovieEntity>> popularMovies = movieRepository.getPopularMovies();
-        presenter.presenterMovies(popularMovies);
+        presenter.presentMovies(popularMovies);
     }
 }

@@ -2,6 +2,7 @@ package com.systango.viperboilerplate.data.datastore;
 
 import com.systango.viperboilerplate.ViperApplication;
 import com.systango.viperboilerplate.data.mapper.MovieDataEntityMapper;
+import com.systango.viperboilerplate.data.mapper.MovieDetailsDataEntityMapper;
 import com.systango.viperboilerplate.data.network.ApiCallInterface;
 import com.systango.viperboilerplate.domain.entity.MovieEntity;
 
@@ -20,6 +21,7 @@ public class RemoteMovieDataStore implements MoviesDataStore {
     @Inject
     ApiCallInterface apiCallInterface;
     private MovieDataEntityMapper movieDataEntityMapper = new MovieDataEntityMapper();
+    private MovieDetailsDataEntityMapper detailsDataEntityMapper = new MovieDetailsDataEntityMapper();
 
     public RemoteMovieDataStore() {
         ViperApplication.getApp().getMainComponent().inject(this);
@@ -27,7 +29,7 @@ public class RemoteMovieDataStore implements MoviesDataStore {
 
     @Override
     public Observable<Optional<MovieEntity>> getMovieById(int movieId) {
-        return null;
+        return apiCallInterface.getMovieDetails(movieId).flatMap(movieDetailsData -> Observable.just(Optional.of(detailsDataEntityMapper.mapFrom(movieDetailsData))));
     }
 
     @Override

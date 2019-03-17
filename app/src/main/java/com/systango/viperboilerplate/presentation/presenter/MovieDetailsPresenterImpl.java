@@ -3,30 +3,29 @@ package com.systango.viperboilerplate.presentation.presenter;
 import com.systango.viperboilerplate.domain.entity.MovieEntity;
 import com.systango.viperboilerplate.presentation.base.BasePresenter;
 import com.systango.viperboilerplate.presentation.mapper.MovieEntityMovieMapper;
-import com.systango.viperboilerplate.presentation.presenter.base.MoviesPresenter;
-import com.systango.viperboilerplate.presentation.view.MoviesView;
+import com.systango.viperboilerplate.presentation.presenter.base.MovieDetailsPresenter;
+import com.systango.viperboilerplate.presentation.view.MovieDetailsView;
 
-import java.util.List;
+import java.util.Optional;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by Mohit Rajput on 13/3/19.
- * TODO: Insert javadoc information here
+ * Created by Mohit Rajput on 18/3/19.
  */
-public class MoviesPresenterImpl extends BasePresenter implements MoviesPresenter {
-    public MoviesView view;
+public class MovieDetailsPresenterImpl extends BasePresenter implements MovieDetailsPresenter {
+    public MovieDetailsView view;
     private MovieEntityMovieMapper movieEntityMovieMapper = new MovieEntityMovieMapper();
 
     @Override
-    public void presentMovies(Observable<List<MovieEntity>> popularMovies) {
-        addDisposable(popularMovies.map(results -> movieEntityMovieMapper.mapFrom(results))
+    public void presentMovie(Observable<Optional<MovieEntity>> movieDetails) {
+        addDisposable(movieDetails.map(results -> movieEntityMovieMapper.mapFrom(results.get()))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        view::showMovieList,
+                        view::showMovieDetails,
                         throwable -> view.showError(throwable.getMessage())));
     }
 }

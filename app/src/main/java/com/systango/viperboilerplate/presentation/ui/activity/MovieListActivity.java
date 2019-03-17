@@ -80,7 +80,7 @@ public class MovieListActivity extends BaseActivity implements MoviesView, OnMov
 
     @Override
     public void onMovieItemClicked(Movie movie) {
-        router.goToMovieDetails(movie);
+        router.goToMovieDetails(movie.getId());
     }
 
     private void refreshMovies(List<Movie> movies) {

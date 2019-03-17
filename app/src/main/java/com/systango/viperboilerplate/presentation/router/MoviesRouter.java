@@ -1,11 +1,9 @@
 package com.systango.viperboilerplate.presentation.router;
 
-import com.systango.viperboilerplate.presentation.entity.Movie;
-
 /**
  * Created by Mohit Rajput on 12/3/19.
- * TODO: Insert javadoc information here
+ * Performs routing on movie list
  */
 public interface MoviesRouter {
-    public void goToMovieDetails(Movie movie);
+    public void goToMovieDetails(int movieId);
 }

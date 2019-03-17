@@ -4,15 +4,15 @@ import com.systango.viperboilerplate.data.datastore.LocalMovieDataStore;
 import com.systango.viperboilerplate.data.datastore.RemoteMovieDataStore;
 import com.systango.viperboilerplate.data.repository.MovieRepository;
 import com.systango.viperboilerplate.domain.interactor.GetPopularMoviesInteractor;
-import com.systango.viperboilerplate.presentation.presenter.MoviesPresenter;
 import com.systango.viperboilerplate.presentation.presenter.MoviesPresenterImpl;
+import com.systango.viperboilerplate.presentation.presenter.base.MoviesPresenter;
 import com.systango.viperboilerplate.presentation.router.MoviesRouter;
 import com.systango.viperboilerplate.presentation.router.impl.MoviesRouterImpl;
 import com.systango.viperboilerplate.presentation.ui.activity.MovieListActivity;
 
 /**
  * Created by Mohit Rajput on 17/3/19.
- * Configure each layer of VIPER for movies module
+ * Configure each layer of VIPER for movies list module
  */
 public class MovieConfigurator implements BaseConfigurator<MovieListActivity> {
     public static MovieConfigurator shared = new MovieConfigurator();

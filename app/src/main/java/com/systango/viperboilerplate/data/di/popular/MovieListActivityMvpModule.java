@@ -3,8 +3,6 @@ package com.systango.viperboilerplate.data.di.popular;
 import com.systango.viperboilerplate.data.datastore.LocalMovieDataStore;
 import com.systango.viperboilerplate.data.datastore.RemoteMovieDataStore;
 import com.systango.viperboilerplate.data.repository.MovieRepository;
-import com.systango.viperboilerplate.presentation.presenter.MoviesPresenter;
-import com.systango.viperboilerplate.presentation.presenter.MoviesPresenterImpl;
 import com.systango.viperboilerplate.presentation.view.MoviesView;
 
 import dagger.Module;

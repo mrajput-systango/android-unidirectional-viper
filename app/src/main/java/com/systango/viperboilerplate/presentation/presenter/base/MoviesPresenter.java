@@ -1,4 +1,4 @@
-package com.systango.viperboilerplate.presentation.presenter;
+package com.systango.viperboilerplate.presentation.presenter.base;
 
 import com.systango.viperboilerplate.domain.entity.MovieEntity;
 
@@ -10,5 +10,5 @@ import io.reactivex.Observable;
  * Created by Mohit Rajput on 13/3/19.
  */
 public interface MoviesPresenter {
-    void presenterMovies(Observable<List<MovieEntity>> popularMovies);
+    void presentMovies(Observable<List<MovieEntity>> popularMovies);
 }
