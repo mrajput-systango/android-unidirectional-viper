@@ -24,7 +24,12 @@ public class RemoteMovieDataStore implements MoviesDataStore {
     private MovieDetailsDataEntityMapper detailsDataEntityMapper = new MovieDetailsDataEntityMapper();
 
     public RemoteMovieDataStore() {
+        //TODO: Dependency injection needs to be removed from here, RemoteMovieDataStore(ApiCallInterface) constructor will be used.
         ViperApplication.getApp().getMainComponent().inject(this);
+    }
+
+    public RemoteMovieDataStore(ApiCallInterface apiCallInterface) {
+        this.apiCallInterface = apiCallInterface;
     }
 
     @Override

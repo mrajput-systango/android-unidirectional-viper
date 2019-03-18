@@ -7,7 +7,7 @@ import com.systango.viperboilerplate.domain.entity.MovieEntity;
 /**
  * Created by Mohit Rajput on 17/3/19.
  */
-public class MovieDetailsDataEntityMapper extends Mapper<MovieDetailsData, MovieEntity> {
+public class MovieDetailsDataEntityMapper implements Mapper<MovieDetailsData, MovieEntity> {
 
     @Override
     public MovieEntity mapFrom(MovieDetailsData from) {

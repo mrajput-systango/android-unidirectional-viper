@@ -21,9 +21,9 @@ public class DomainTestUtils {
         return movieEntity;
     }
 
-    public List<MovieEntity> generateMovieEntityList() {
+    public List<MovieEntity> generateMovieEntityList(int totalCount) {
         List<MovieEntity> movieEntityList = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < totalCount; i++) {
             movieEntityList.add(getTestMovieEntity(i + 1));
         }
         return movieEntityList;

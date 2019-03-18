@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * Created by Mohit Rajput on 13/3/19.
  * MovieData to MovieEntity DTO mapper
  */
-public class MovieDataEntityMapper extends Mapper<MovieData, MovieEntity> {
+public class MovieDataEntityMapper implements Mapper<MovieData, MovieEntity> {
 
     @Override
     public MovieEntity mapFrom(MovieData from) {

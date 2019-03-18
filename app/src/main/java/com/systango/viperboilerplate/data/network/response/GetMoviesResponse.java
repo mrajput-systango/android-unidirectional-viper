@@ -5,10 +5,15 @@ import com.systango.viperboilerplate.data.entity.MovieData;
 
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Created by Mohit Rajput on 11/2/19.
  * Movies list response
  */
+@Getter
+@Setter
 public class GetMoviesResponse {
 
     @SerializedName("page")
@@ -22,20 +27,4 @@ public class GetMoviesResponse {
 
     @SerializedName("results")
     private List<MovieData> movies;
-
-    public int getPage() {
-        return page;
-    }
-
-    public int getTotalResults() {
-        return totalResults;
-    }
-
-    public int getTotalPages() {
-        return totalPages;
-    }
-
-    public List<MovieData> getMovies() {
-        return movies;
-    }
 }
